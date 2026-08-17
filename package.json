@@ -1,0 +1,7 @@
+{
+  "name": "truco-de-barrio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "dev": "node server.mjs", "build": "node --check src/app.js" }
+}
