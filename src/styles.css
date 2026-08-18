@@ -113,6 +113,9 @@ button { cursor: pointer; }
 .fixtures { max-height:none;display:grid;grid-template-rows:58px minmax(0,1fr);box-shadow:0 12px 32px rgba(0,0,0,.22); }
 .fixture-page { min-height:0;display:flex;flex-direction:column; }
 .competition-block .fixtures { margin-top:12px;min-height:calc(100% - 12px); }
+.competition-block .standings { margin-top:12px;border-radius:8px; }
+.phase-navigation { display:flex;justify-content:flex-end;margin:0 0 18px; }
+.phase-navigation .secondary { min-height:42px;border-color:rgba(221,176,82,.65);color:#f1d28d;box-shadow:0 8px 22px rgba(0,0,0,.22); }
 .fixture { min-height:72px;flex:1; }
 .empty-fixture { margin:auto; }
 
