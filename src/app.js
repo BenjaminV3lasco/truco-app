@@ -12,6 +12,10 @@ const modes = [
 const history = [{name:'Copa del Asado',date:'12 jul 2026',players:8,winner:'Nico'},{name:'Torneo del Viernes',date:'28 jun 2026',players:6,winner:'La Negra'}];
 const state = { screen:'home', step:1, names:[''], mode:'', format:'', teams:[], groups:[], groupCount:1, qualifiers:2, leagueOutcome:'standings', matches:[], bracketRounds:[], fixturePages:{}, activeMatchId:null, reviewStage:'teams', tournamentLocked:false, music:false, score:{ us:0, them:0, target:30, winner:null, winnerOpen:false } };
 const root = document.querySelector('#root');
+const ambientAudio = new Audio('/public/audio/ambientacion.mp3');
+ambientAudio.loop = true;
+ambientAudio.preload = 'auto';
+ambientAudio.volume = 0.28;
 const esc = value => value.replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const players = () => state.names.map(n=>n.trim()).filter(Boolean);
 const button = (type, content, cls='') => `<button data-action="${type}" class="${cls}">${content}</button>`;
@@ -25,7 +29,12 @@ function saveTournament(){ if(!state.tournamentLocked)return;const data={names:s
 function restoreTournament(){ try{const data=JSON.parse(localStorage.getItem(savedTournamentKey));if(data?.tournamentLocked)Object.assign(state,data,{screen:'home',activeMatchId:null});}catch{localStorage.removeItem(savedTournamentKey);} }
 function resetTournament(){ localStorage.removeItem(savedTournamentKey);Object.assign(state,{screen:'create',step:1,names:[''],mode:'',format:'',teams:[],groups:[],groupCount:1,qualifiers:2,leagueOutcome:'standings',matches:[],bracketRounds:[],fixturePages:{},activeMatchId:null,reviewStage:'teams',tournamentLocked:false}); }
 
-function header(){ return `<header class="topbar">${button('home',`<span class="brand-mark">${icons.crown}</span><span><strong>TRUCO</strong><small>DE BARRIO</small></span>`,'brand')}${button('music',`${icons.music}<span>${state.music?'Chamamé sonando':'Ambientación'}</span>`,`sound-btn ${state.music?'active':''}`)}</header>`; }
+function header(){ return `<header class="topbar">${button('home',`<span class="brand-mark">${icons.crown}</span><span><strong>TRUCO</strong><small>DE BARRIO</small></span>`,'brand')}<button data-action="music" class="sound-btn ${state.music?'active':''}" aria-pressed="${state.music}" title="${state.music?'Pausar ambientación':'Reproducir ambientación'}">${icons.music}<span>${state.music?'Ambientación sonando':'Ambientación'}</span></button></header>`; }
+async function toggleAmbientMusic(){
+  if(state.music){ambientAudio.pause();state.music=false;render();return;}
+  try{await ambientAudio.play();state.music=true;}catch{state.music=false;}
+  render();
+}
 function home(){ return `<section class="hero"><div class="home-menu-panel"><div class="eyebrow"><span></span> LA MESA ESTÁ SERVIDA <span></span></div><h1>Donde hay amigos,<br>hay <em>revancha.</em></h1><p>Armá el torneo, repartí las cartas y que hable la mesa.</p><div class="home-actions">${state.tournamentLocked?button('continue-tournament',`Continuar torneo ${icons.next}`,'primary huge'):button('create',`${icons.plus} Crear torneo ${icons.next}`,'primary huge')}${state.tournamentLocked?button('new-tournament',`${icons.plus} Nuevo torneo`,'secondary huge'):''}${button('scoreboard','Anotador','secondary huge')}${button('history',`${icons.history} Ver historial`,'secondary huge')}</div><div class="table-rule"><span>♠</span><span>03</span><span>♥</span><span>06</span><span>♣</span></div></div></section>`; }
 function steps(){ return `<div class="steps">${[['1','Modalidad'],['2','Jugadores'],['3','Formato'],['4','Sorteo']].map(([n,l],i)=>`<div class="step ${state.step>=+n?'on':''}"><span>${state.step>+n?icons.check:n}</span><small>${l}</small></div>${i<3?`<div class="line ${state.step>+n?'on':''}"></div>`:''}`).join('')}</div>`; }
 function heading(icon, kicker, title, subtitle){ return `<div class="panel-heading"><span class="section-icon">${icons[icon]}</span><div><p>${kicker}</p><h2>${title}</h2><span>${subtitle}</span></div></div>`; }
@@ -112,7 +121,7 @@ root.addEventListener('click',e=>{
   if(score){const side=score.dataset.score;if(!state.score.winner&&state.score[side]<state.score.target){state.score[side]++;if(state.score[side]===state.score.target){state.score.winner=side;state.score.winnerOpen=true;completeActiveMatch(side);saveTournament();}}render();return;}
   if(target){state.score.target=+target.dataset.target;state.score.us=Math.min(state.score.us,state.score.target);state.score.them=Math.min(state.score.them,state.score.target);state.score.winner=null;state.score.winnerOpen=false;render();return;}
   if(action==='home')goHome();
-  if(action==='music'){state.music=!state.music;render();}
+  if(action==='music')toggleAmbientMusic();
   if(action==='create'){state.screen='create';render();}
   if(action==='continue-tournament'){state.screen='create';state.step=4;render();}
   if(action==='new-tournament'){resetTournament();render();}
