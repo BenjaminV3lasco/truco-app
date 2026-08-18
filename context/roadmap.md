@@ -18,11 +18,11 @@ El orden puede cambiar con las pruebas de uso. Los elementos completados describ
 - [x] Configurar modalidad 1v1, 2v2 o 3v3.
 - [ ] Gestionar equipos manuales o sorteados y validar la cantidad de jugadores.
 - [ ] Configurar partidos a 15 o 30 puntos.
-- [ ] Registrar resultados y ganadores.
-- [ ] Calcular posiciones de Liga.
-- [ ] Calcular tablas y clasificación desde grupos.
-- [ ] Avanzar rondas de Eliminatoria directa.
-- [ ] Incorporar el anotador de partido.
+- [x] Registrar resultados y ganadores en memoria.
+- [x] Calcular posiciones de Liga.
+- [x] Calcular tablas y clasificación visual desde grupos.
+- [x] Avanzar rondas básicas de Eliminatoria directa.
+- [x] Incorporar el anotador de partido.
 - [x] Incorporar un anotador libre desde el menú principal.
 - [ ] Detectar el cierre de mano tras 20 segundos de inactividad.
 - [ ] Incorporar la secuencia especial de Puntas para 3v3.
