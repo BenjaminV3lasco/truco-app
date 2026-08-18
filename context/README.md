@@ -1,6 +1,6 @@
 # Contexto del proyecto
 
-Esta carpeta conserva la memoria de producto y las decisiones de desarrollo de **Truco de Barrio**. Su objetivo es que una persona —o una herramienta de asistencia— pueda continuar el trabajo sin reconstruir el contexto desde cero.
+Esta carpeta conserva la memoria de producto y las decisiones de desarrollo de **Truco Criollo**. Su objetivo es que una persona —o una herramienta de asistencia— pueda continuar el trabajo sin reconstruir el contexto desde cero.
 
 El código sigue siendo la fuente de verdad sobre lo que está implementado. Estos documentos explican por qué existe cada decisión y qué todavía está pendiente.
 
