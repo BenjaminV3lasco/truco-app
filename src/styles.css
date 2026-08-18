@@ -199,6 +199,8 @@ button { cursor: pointer; }
 }
 
 /* Controles consistentes e historial navegable */
+.table-row.champion-position>span:first-child { background:linear-gradient(145deg,#f0c453,#c99027);color:#16251e;text-shadow:0 1px rgba(255,255,255,.25); }
+.standings footer.champion-legend i { background:#d9a63d;box-shadow:0 0 8px rgba(226,177,70,.35); }
 .sound-btn { position:relative;width:43px;height:43px;padding:0;display:grid;place-items:center;border-radius:50%;font-size:18px; }
 .sound-btn .music-note { display:block;line-height:1; }
 .sound-btn .music-off { position:absolute;right:7px;bottom:5px;display:grid;width:15px;height:15px;place-items:center;border-radius:50%;background:#8f4435;color:#fff4dc;font-size:12px;font-weight:800;line-height:1; }
