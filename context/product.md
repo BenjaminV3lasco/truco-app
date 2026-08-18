@@ -54,6 +54,7 @@ La competencia toma como referencia el funcionamiento de los torneos de fútbol:
 - Durante los playoffs posteriores a una fase de grupos se puede alternar entre la llave actual y los resultados finales de los grupos, sin permitir su edición.
 - El historial muestra primero un resumen por torneo —campeón, modalidad, formato y fecha— y abre el detalle completo de participantes y resultados al seleccionar uno. Todo el contenido histórico es de solo lectura.
 - La variante “Puntas” puede activarse o desactivarse desde Ajustes. Solo afecta partidos 3vs3: comienzan en Redonda y, al finalizar una mano donde un equipo llegó a 5, alternan Puntas/Redonda hasta los 24 puntos. Una mano termina tras 15 segundos sin cambios en el marcador y el tipo de ronda actual se muestra en el encabezado del anotador con una animación breve al cambiar.
+- Ajustes es una pantalla independiente, accesible desde el encabezado, con variantes y sonidos persistentes. Los cambios de vista usan transiciones breves, los controles tienen microinteracciones y los botones pueden reproducir un toque de interfaz configurable. La decoración evita emojis y utiliza iconografía lineal propia.
 - Los partidos se configuran a 15 o 30 puntos.
 - El detalle y las decisiones pendientes están en `tournament-rules.md`.
 
