@@ -166,3 +166,31 @@ button { cursor: pointer; }
   .difference { padding-right:7px!important; }
   .fixture { padding:14px 13px; }
 }
+
+/* Llaves amplias y cierre del torneo */
+.live-tournament-wrap:has(.knockout-dashboard),.flow-wrap:has(.knockout-dashboard) { width:min(1480px,calc(100% - 32px)); }
+.knockout-dashboard { min-height:calc(100dvh - 190px);padding:34px 32px!important; }
+.knockout-dashboard .bracket { min-height:520px;grid-auto-columns:minmax(240px,1fr);gap:28px; }
+.knockout-dashboard .bracket h3 { padding-bottom:13px;font-size:11px; }
+.knockout-dashboard .bracket-match span { padding:12px 13px;font-size:12px; }
+.champion-modal { width:min(470px,100%);padding:45px 38px 34px;border-color:#efc25f;background:radial-gradient(circle at top,#24513f,#0d261d 72%); }
+.champion-modal .winner-crown { width:82px;height:82px;font-size:38px;box-shadow:0 0 0 8px rgba(213,164,72,.1),0 0 40px rgba(231,180,78,.18); }
+.champion-modal h2 { color:#f4cc70;font-size:clamp(30px,5vw,40px); }
+.champion-confetti { margin-top:22px;color:#d8aa4e;font-size:19px;letter-spacing:.2em; }
+.history-wrap { width:min(980px,calc(100% - 32px)); }
+.history-panel { width:100%; }
+.history-list .history-tournament { display:block;padding:0;overflow:hidden; }
+.history-summary { display:flex;align-items:center;gap:14px;padding:16px 18px;background:#123329; }
+.history-results { border-top:1px solid #355549;background:#0c281f; }
+.history-results>div { display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;gap:8px;padding:11px 18px;border-bottom:1px solid rgba(53,85,73,.65);font-size:12px; }
+.history-results>div:last-child { border-bottom:0; }
+.history-results span:first-child { text-align:right; }.history-results span:last-child { text-align:left; }
+.history-results b { color:#e4b558;font-size:13px; }.history-results i { color:#71877e;text-align:center;font-style:normal; }
+.history-empty { margin:0;padding:22px;text-align:center;color:#83978e;font-size:11px; }
+
+@media (max-width:720px) {
+  .knockout-dashboard { min-height:0;padding:20px 10px!important; }
+  .knockout-dashboard .bracket { min-height:430px;grid-auto-columns:190px;gap:17px; }
+  .history-results>div { padding:10px 9px;font-size:10px; }
+  .history-summary { padding:14px 12px; }
+}

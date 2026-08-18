@@ -50,6 +50,7 @@ La competencia toma como referencia el funcionamiento de los torneos de fútbol:
 - Las modalidades admitidas son 1 contra 1, 2 contra 2 y 3 contra 3.
 - El formato competitivo es independiente de la modalidad de juego.
 - En una fase de grupos o liga con playoffs nunca pueden clasificar todos los participantes o equipos; la cantidad de clasificados debe ser menor al total y permitir una llave eliminatoria válida.
+- Al completarse la fase regular se genera automáticamente la llave de playoffs cuando corresponda. Al terminar la última fecha de una liga sin playoffs o la final de cualquier llave, se proclama al campeón y el torneo completo pasa al historial de solo lectura.
 - Los partidos se configuran a 15 o 30 puntos.
 - El detalle y las decisiones pendientes están en `tournament-rules.md`.
 
