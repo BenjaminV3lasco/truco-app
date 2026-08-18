@@ -2,7 +2,7 @@
 
 ## Nombre de trabajo
 
-**Truco de Barrio**.
+**Truco Criollo**. Título web: **Truco Criollo - Creador de Torneos y Diversión**.
 
 ## Objetivo
 
