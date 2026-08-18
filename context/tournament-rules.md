@@ -56,11 +56,11 @@ El marcador se registra tocando el lado de cada participante. Cada toque suma un
 ### Detección del final de una mano
 
 - Una mano comienza con el primer punto registrado después del cierre de la anterior.
-- Termina automáticamente después de 20 segundos sin tocar el anotador.
+- Termina automáticamente después de 15 segundos sin tocar el anotador.
 - Cada punto agregado o deshecho reinicia el contador.
 - El cambio entre ronda redonda y Puntas se evalúa al cerrar la mano, nunca inmediatamente después de un toque.
 - La interfaz debe mostrar el tiempo restante.
-- También debe permitir cerrar la mano manualmente para no obligar a esperar 20 segundos.
+- También debe permitir cerrar la mano manualmente para no obligar a esperar 15 segundos.
 
 ## 4. Puntas en modalidad 3v3
 
@@ -77,7 +77,7 @@ Puntas sólo aplica a partidos 3v3.
 puntas -> redonda -> puntas -> redonda -> ... -> 24 -> redonda
 ```
 
-El cierre de mano por 20 segundos de inactividad evita recomendar Puntas mientras todavía se registran puntos de la mano actual.
+El cierre de mano por 15 segundos de inactividad evita recomendar Puntas mientras todavía se registran puntos de la mano actual.
 
 ## 5. Fase de Grupos
 

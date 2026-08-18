@@ -39,7 +39,7 @@
 2. Abrir el anotador con participantes y marcador en cero.
 3. Tocar el lado izquierdo o derecho para sumar un punto al participante correspondiente.
 4. Permitir deshacer el último punto.
-5. Mostrar y reiniciar un contador de 20 segundos con cada modificación.
+5. Iniciar y reiniciar un temporizador de 15 segundos con cada modificación.
 6. Cerrar automáticamente la mano al llegar a cero o manualmente si el usuario lo solicita.
 7. En 3v3, calcular y anunciar si la próxima mano es redonda o Puntas.
 8. Al alcanzar el objetivo, pedir confirmación del resultado.

@@ -24,7 +24,7 @@ El orden puede cambiar con las pruebas de uso. Los elementos completados describ
 - [x] Avanzar rondas básicas de Eliminatoria directa.
 - [x] Incorporar el anotador de partido.
 - [x] Incorporar un anotador libre desde el menú principal.
-- [ ] Detectar el cierre de mano tras 20 segundos de inactividad.
+- [x] Detectar el cierre de mano tras 15 segundos de inactividad.
 - [ ] Incorporar la secuencia especial de Puntas para 3v3.
 - [ ] Resolver empates relevantes con partidos adicionales a 15.
 - [ ] Soportar `byes` y abandonos en llaves eliminatorias.
